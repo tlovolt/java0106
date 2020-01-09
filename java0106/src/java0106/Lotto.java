@@ -51,6 +51,21 @@ public class Lotto {
 			lotto[i] = su;
 		}
 
+		int len = lotto.length;
+		
+		//첫번째 부터 마지막 바로 앞 자리까지
+		for(int i=0; i<len-1; i=i+1) {
+			//기준의 뒤에 있는 모든 데이터와 비교해서
+			for(int j=i+1; j<len; j=j+1) {
+				//기준점의 데이터가 크면 swap
+				if(lotto[i] > lotto[j]) {
+					int temp = lotto[i];
+					lotto[i] = lotto[j];
+					lotto[j] = temp;
+				}
+			}
+		}
+		
 		// 입력받은 데이터 출력
 		for (int temp : lotto) {
 			System.out.print(temp + "\t");
@@ -59,3 +74,10 @@ public class Lotto {
 		sc.close();
 	}
 }
+
+
+
+
+
+
+
